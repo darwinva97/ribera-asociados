@@ -2,8 +2,8 @@
 interface Props {
   message?: string;
 }
-const { message = 'Buenas tardes. Quisiera coordinar una cita con el estudio Ribera & Asociados.' } = Astro.props;
-const href = `https://wa.me/51999888777?text=${encodeURIComponent(message)}`;
+const { message = 'Buenas tardes. Quisiera coordinar una cita con el estudio H11 Arquitectura.' } = Astro.props;
+const href = `https://wa.me/5212226762055?text=${encodeURIComponent(message)}`;
 ---
 
 <a class="wa" href={href} target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">

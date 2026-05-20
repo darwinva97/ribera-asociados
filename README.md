@@ -1,6 +1,6 @@
-# Ribera & Asociados
+# H11 Arquitectura
 
-Sitio estático multi-ruta para Ribera & Asociados — firma de arquitectos e ingenieros con 30 años de trayectoria en el mercado peruano.
+Sitio estático multi-ruta para H11 Arquitectura — firma de arquitectos e ingenieros con 30 años de trayectoria en el mercado peruano.
 
 ## Stack
 - Astro 5 (`output: 'static'`)
