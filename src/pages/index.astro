@@ -1,0 +1,476 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    n: '01',
+    title: 'Diseño arquitectónico residencial',
+    desc: 'Residencias de alta gama desde el partido conceptual hasta el último detalle constructivo. Casas de campo, departamentos de excepción y residencias en condominio.'
+  },
+  {
+    n: '02',
+    title: 'Proyectos comerciales',
+    desc: 'Edificios corporativos, retail premium y hospitalidad. Integración con normativa municipal, ingeniería estructural y certificaciones energéticas.'
+  },
+  {
+    n: '03',
+    title: 'Remodelación premium',
+    desc: 'Intervenciones de alto estándar en residencias y oficinas existentes. Coordinación con propiedad horizontal y direcciones distritales.'
+  }
+];
+
+const stats = [
+  { num: '30', sub: 'Años de ejercicio' },
+  { num: '450+', sub: 'Proyectos entregados' },
+  { num: '4', sub: 'Socios fundadores' },
+  { num: '38', sub: 'Profesionales en planta' }
+];
+
+const credentials = [
+  'CAP', 'CIP', 'CAPECO', 'CCL', 'ICCGSA'
+];
+---
+
+<Layout title="Ribera & Asociados — Arquitectos e Ingenieros · Lima, Perú">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-meta">
+        <span class="eyebrow">Est. 1995 · Lima, Perú</span>
+      </div>
+      <h1 class="hero-title">
+        Arquitectura con criterio.<br/>
+        <span class="italic-serif brass">Tres décadas</span> de obra construida.
+      </h1>
+      <p class="lead hero-lead">
+        Estudio peruano de arquitectos e ingenieros dedicado a residencias de alta gama,
+        proyectos comerciales y remodelaciones de exigencia técnica. Trabajo de despacho,
+        criterio constructivo y acompañamiento integral desde el partido hasta la entrega.
+      </p>
+      <div class="hero-cta">
+        <a href="/contacto" class="btn">Agendar una cita</a>
+        <a href="/proyectos" class="btn btn-ghost">Ver portafolio</a>
+      </div>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <dl class="hero-foot">
+        <div>
+          <dt class="label">Atención</dt>
+          <dd>Lun a Vie · 9:00 – 18:30 h</dd>
+        </div>
+        <div>
+          <dt class="label">Estudio</dt>
+          <dd>Av. Camino Real 1234 · San Isidro</dd>
+        </div>
+        <div>
+          <dt class="label">Directos</dt>
+          <dd>(01) 442-1234 · +51 999 888 777</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS BAND -->
+  <section class="credentials">
+    <div class="container">
+      <div class="cred-row">
+        <span class="cred-label">Afiliaciones e inscripciones profesionales</span>
+        <ul class="cred-list" aria-label="Cámaras y colegios profesionales">
+          {credentials.map(c => (
+            <li class="cred-item">
+              <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="none" stroke="#0f1e3a" stroke-width="1"/>
+                <text x="20" y="25" text-anchor="middle" font-family="Playfair Display, serif" font-size="11" fill="#0f1e3a" font-weight="600">{c}</text>
+              </svg>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS TEASER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Áreas de práctica</span>
+        <h2>Servicios integrales,<br/><span class="italic-serif">criterio uniforme</span>.</h2>
+        <p class="lead">
+          Acompañamos cada encargo con un equipo cerrado: un socio responsable, un arquitecto
+          residente y los especialistas que el proyecto requiera. Sin tercerizaciones invisibles.
+        </p>
+      </div>
+      <div class="grid grid-3 service-grid">
+        {services.map(s => (
+          <article class="card service-card">
+            <span class="service-n">{s.n}</span>
+            <h3 class="service-title">{s.title}</h3>
+            <div class="divider-rule"></div>
+            <p>{s.desc}</p>
+            <a href="/servicios" class="link-more">Más detalle <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LA FIRMA -->
+  <section class="section section-cream firma">
+    <div class="container">
+      <div class="firma-grid">
+        <div class="firma-text">
+          <span class="eyebrow">La firma</span>
+          <h2>Despacho técnico,<br/>oficio paciente.</h2>
+          <div class="divider-rule"></div>
+          <p>
+            Ribera &amp; Asociados se constituyó en 1995 en San Isidro, Lima, como un estudio
+            pequeño dedicado a residencias unifamiliares en La Molina y Chacarilla. Treinta años
+            después, la firma mantiene la misma vocación: <em class="italic-serif">trabajo de despacho,
+            tableros físicos cuando hace falta, y visitas de obra todas las semanas</em>.
+          </p>
+          <p>
+            Los cuatro socios fundadores siguen activos en cada encargo. La planta técnica
+            articula arquitectos, ingenieros estructurales, especialistas en instalaciones
+            y un área dedicada de dirección de obra. La continuidad del equipo es, para nosotros,
+            la mejor garantía constructiva.
+          </p>
+          <a href="/proyectos" class="link-arrow">Ver obra construida <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="firma-stats">
+          {stats.map(s => (
+            <div class="stat">
+              <span class="stat-num">{s.num}</span>
+              <span class="stat-sub">{s.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIO -->
+  <section class="section">
+    <div class="container-narrow testimonial">
+      <svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true" class="quote-mark">
+        <path d="M0 26V14C0 6.27 4.91.45 12.7 0v5.27c-3.91.45-6 2.91-6.18 7.36H12V26H0zm21.7 0V14c0-7.73 4.9-13.55 12.7-14v5.27c-3.91.45-6 2.91-6.18 7.36h6.18V26H21.7z" fill="#a67c2b"/>
+      </svg>
+      <blockquote class="quote">
+        Trabajamos con Ribera &amp; Asociados en la remodelación integral de nuestra casa de San Isidro.
+        Lo que más valoramos fue la honestidad técnica: nos dijeron qué se podía y qué no, con cifras claras,
+        antes de empezar. La obra terminó dentro del plazo prometido. <span class="italic-serif">Un estudio
+        serio, en el sentido antiguo de la palabra.</span>
+      </blockquote>
+      <div class="attrib">
+        <div class="attrib-line"></div>
+        <div>
+          <span class="attrib-name">Dra. Cecilia Vargas Lostaunau</span>
+          <span class="attrib-role">Residencia San Isidro · Cliente desde 2021</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIT TEASER -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="credit-teaser">
+        <div>
+          <span class="eyebrow">Financiamiento</span>
+          <h2>Planes de pago a crédito<br/>para honorarios profesionales.</h2>
+          <p class="lead">
+            Entendemos que un proyecto de arquitectura es una inversión significativa.
+            Por ello ofrecemos esquemas de pago en 3, 12 y 24 cuotas, con condiciones claras
+            y sin intermediarios financieros para nuestros clientes recurrentes.
+          </p>
+          <a href="/financiamiento" class="btn">Ver planes</a>
+        </div>
+        <div class="credit-vignette" aria-hidden="true">
+          <svg viewBox="0 0 280 200" width="100%" height="auto">
+            <defs>
+              <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0f1e3a"/>
+                <stop offset="100%" stop-color="#1a2a4a"/>
+              </linearGradient>
+            </defs>
+            <rect width="280" height="200" fill="url(#cg)"/>
+            <line x1="24" y1="40" x2="120" y2="40" stroke="#a67c2b" stroke-width="1"/>
+            <text x="24" y="74" fill="#fbf9f4" font-family="Playfair Display, serif" font-size="22" font-style="italic">3 · 12 · 24</text>
+            <text x="24" y="100" fill="#a67c2b" font-family="Lato, sans-serif" font-size="9" letter-spacing="2">CUOTAS MENSUALES</text>
+            <line x1="24" y1="148" x2="256" y2="148" stroke="#a67c2b" stroke-width="0.5" opacity="0.5"/>
+            <text x="24" y="172" fill="#fbf9f4" font-family="Lato, sans-serif" font-size="9" letter-spacing="2">SIN INTERESES · PRIMERAS 3 CUOTAS</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>¿Tiene un proyecto en mente?</h2>
+      <p class="lead">
+        Recibimos consultas iniciales sin compromiso. Una primera reunión técnica, en gabinete
+        o en obra, nos permite evaluar el alcance y proponer un esquema de trabajo.
+      </p>
+      <div class="cta-buttons">
+        <a href="/contacto" class="btn btn-light">Coordinar reunión</a>
+        <a href="/servicios" class="btn btn-ghost-light">Conocer servicios</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: var(--ivory);
+    padding: 100px 0 80px;
+    border-bottom: 1px solid var(--navy-line);
+  }
+  .hero-inner { max-width: 980px; margin: 0 auto; }
+  .hero-meta { margin-bottom: 28px; }
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    line-height: 1.08;
+    font-weight: 400;
+    margin: 0 0 28px;
+  }
+  .brass { color: var(--brass); }
+  .hero-lead { font-size: 1.22rem; max-width: 64ch; }
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 36px 0 56px;
+  }
+  .hero-rule {
+    height: 1px;
+    background: var(--navy-line);
+    margin: 24px 0 24px;
+  }
+  .hero-foot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 0;
+  }
+  .hero-foot div { display: flex; flex-direction: column; gap: 6px; }
+  .hero-foot dt { margin: 0; }
+  .hero-foot dd { margin: 0; font-size: 0.96rem; color: var(--body); }
+
+  .credentials {
+    background: #fff;
+    border-bottom: 1px solid var(--navy-line);
+    padding: 36px 0;
+  }
+  .cred-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .cred-label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cred-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--navy);
+  }
+  .cred-item span { display: none; }
+
+  .section-head {
+    max-width: 680px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .section-head h2 { margin-bottom: 24px; }
+  .section-head .lead { margin: 0 auto; }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--navy-line);
+    padding: 40px 36px;
+  }
+  .service-n {
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    color: var(--brass);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .service-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 0;
+  }
+  .service-card .divider-rule { margin: 18px 0; }
+  .service-card p { color: var(--body); flex: 1; }
+  .link-more, .link-arrow {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 12px;
+    display: inline-block;
+    transition: color .2s ease;
+  }
+  .link-more:hover, .link-arrow:hover { color: var(--brass); }
+
+  .firma-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .firma-text p { font-size: 1.02rem; max-width: 58ch; }
+  .firma-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--navy-line);
+    border-left: 1px solid var(--navy-line);
+    background: #fff;
+  }
+  .stat {
+    padding: 36px 28px;
+    border-right: 1px solid var(--navy-line);
+    border-bottom: 1px solid var(--navy-line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-sub {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .testimonial {
+    text-align: center;
+    position: relative;
+  }
+  .quote-mark { display: block; margin: 0 auto 24px; opacity: 0.85; }
+  .quote {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    line-height: 1.55;
+    color: var(--navy);
+    font-weight: 400;
+    margin: 0 0 36px;
+    font-style: normal;
+  }
+  .quote .italic-serif { color: var(--brass); }
+  .attrib {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .attrib-line {
+    width: 40px;
+    height: 1px;
+    background: var(--brass);
+  }
+  .attrib-name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--navy);
+    display: block;
+  }
+  .attrib-role {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .credit-teaser {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .credit-teaser .lead { font-size: 1.08rem; }
+  .credit-vignette {
+    box-shadow: var(--shadow-card);
+  }
+
+  .cta-band {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 100px 0;
+    text-align: center;
+  }
+  .cta-inner h2 { color: var(--ivory); }
+  .cta-inner .lead { color: rgba(251, 249, 244, 0.78); margin: 16px auto 32px; }
+  .cta-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-light {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--ivory);
+  }
+  .btn-light:hover {
+    background: #c2912f;
+    border-color: #c2912f;
+  }
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--ivory);
+    border: 1px solid rgba(251, 249, 244, 0.4);
+  }
+  .btn-ghost-light:hover {
+    background: var(--ivory);
+    color: var(--navy);
+    border-color: var(--ivory);
+  }
+
+  @media (max-width: 900px) {
+    .firma-grid, .credit-teaser { grid-template-columns: 1fr; gap: 40px; }
+    .hero-foot { grid-template-columns: 1fr; gap: 16px; }
+    .firma-stats { grid-template-columns: 1fr 1fr; }
+    .cred-row { justify-content: center; text-align: center; }
+  }
+</style>

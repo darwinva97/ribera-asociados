@@ -1,0 +1,372 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const socios = [
+  { nombre: 'Arq. Ricardo Ribera Mendoza', rol: 'Socio fundador · Dirección general', email: 'ricardo.ribera@riberaasociados.pe', cap: 'CAP 5421' },
+  { nombre: 'Arq. Patricia Linares Cárdenas', rol: 'Socia · Diseño residencial', email: 'patricia.linares@riberaasociados.pe', cap: 'CAP 6890' },
+  { nombre: 'Ing. Fernando Castañeda Bravo', rol: 'Socio · Ingeniería estructural', email: 'fernando.castaneda@riberaasociados.pe', cap: 'CIP 12345' },
+  { nombre: 'Arq. Mariana Salcedo Vidal', rol: 'Socia · Proyectos comerciales', email: 'mariana.salcedo@riberaasociados.pe', cap: 'CAP 9012' }
+];
+---
+
+<Layout title="Contacto — Ribera & Asociados">
+  <section class="page-head">
+    <div class="container-narrow">
+      <span class="eyebrow">Atención al cliente</span>
+      <h1>Coordine una <span class="italic-serif">reunión técnica</span>.</h1>
+      <p class="lead">
+        Recibimos consultas iniciales sin compromiso. La primera reunión, en nuestras oficinas de
+        San Isidro o en el lote / inmueble del proyecto, nos permite evaluar alcance, plazos y
+        proponerle un esquema de trabajo concreto.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- INFO CARD -->
+        <div class="info-card">
+          <h2>Estudio principal</h2>
+          <div class="divider-rule"></div>
+
+          <div class="info-block">
+            <span class="label">Dirección</span>
+            <p>
+              Av. Camino Real 1234, Piso 12<br/>
+              Edificio Real Once<br/>
+              San Isidro, Lima 27 — Perú
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="label">Líneas directas</span>
+            <p>
+              <a href="tel:+5114421234">(01) 442-1234</a> · Central<br/>
+              <a href="tel:+5114421235">(01) 442-1235</a> · Mesa de partes<br/>
+              <a href="tel:+51999888777">+51 999 888 777</a> · WhatsApp
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="label">Correo institucional</span>
+            <p>
+              <a href="mailto:estudio@riberaasociados.pe">estudio@riberaasociados.pe</a><br/>
+              <a href="mailto:proyectos@riberaasociados.pe">proyectos@riberaasociados.pe</a>
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="label">Horario de atención</span>
+            <p>
+              Lunes a viernes · 9:00 – 18:30 h<br/>
+              Sábados · 9:30 – 13:00 h (con cita)<br/>
+              <span class="muted">Visitas a obra coordinadas según disponibilidad</span>
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="label">Registro</span>
+            <p>
+              RUC 20512345678<br/>
+              CAP 12345 · CIP 09876
+            </p>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-card">
+          <span class="eyebrow">Formulario de consulta</span>
+          <h2>Solicite una <span class="italic-serif">cita inicial</span>.</h2>
+          <p class="form-intro">
+            Complete el formulario y un miembro del equipo responsable se comunicará en un plazo
+            máximo de 48 horas hábiles. Para consultas urgentes, le recomendamos el canal telefónico
+            o WhatsApp.
+          </p>
+
+          <form action="#" method="post" class="form">
+            <div class="form-row">
+              <div class="field">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" type="text" required placeholder="Como figura en su DNI" />
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa / Razón social</label>
+                <input id="empresa" name="empresa" type="text" placeholder="Opcional" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" required placeholder="nombre@dominio.com" />
+              </div>
+              <div class="field">
+                <label for="telefono">Teléfono / Celular</label>
+                <input id="telefono" name="telefono" type="tel" required placeholder="+51 ..." />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="servicio">Servicio de interés</label>
+              <select id="servicio" name="servicio">
+                <option value="">Seleccione una opción —</option>
+                <option>Diseño arquitectónico residencial</option>
+                <option>Proyectos comerciales</option>
+                <option>Remodelación premium</option>
+                <option>Dirección técnica de obra</option>
+                <option>Peritaje o tasación</option>
+                <option>Asesoría legal-arquitectónica</option>
+                <option>Consulta general</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="ubicacion">Ubicación del proyecto</label>
+                <input id="ubicacion" name="ubicacion" type="text" placeholder="Distrito, ciudad" />
+              </div>
+              <div class="field">
+                <label for="presupuesto">Presupuesto referencial</label>
+                <select id="presupuesto" name="presupuesto">
+                  <option value="">Seleccione un rango —</option>
+                  <option>Hasta S/ 50,000</option>
+                  <option>S/ 50,000 – S/ 200,000</option>
+                  <option>S/ 200,000 – S/ 500,000</option>
+                  <option>S/ 500,000 – S/ 1,500,000</option>
+                  <option>Más de S/ 1,500,000</option>
+                  <option>Por definir</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Descripción del encargo</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntenos brevemente el alcance, plazo deseado y cualquier consideración relevante."></textarea>
+            </div>
+
+            <div class="field check">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms" class="check-label">
+                Acepto el tratamiento de mis datos personales con fines de contacto comercial,
+                conforme a la Ley N° 29733 — Protección de Datos Personales.
+              </label>
+            </div>
+
+            <button type="submit" class="btn">Enviar consulta</button>
+            <p class="form-foot muted">
+              Sus datos no serán compartidos con terceros. Consulte nuestra política de privacidad.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA PLACEHOLDER -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="map-head">
+        <span class="eyebrow">Cómo llegar</span>
+        <h2>Estudio en <span class="italic-serif">San Isidro</span>.</h2>
+        <p class="lead">
+          Nuestras oficinas se encuentran en el corazón del distrito financiero de Lima, a dos cuadras
+          del óvalo Gutiérrez. Estacionamiento de cortesía para visitas con cita previa.
+        </p>
+      </div>
+      <div class="map-placeholder" aria-label="Mapa de ubicación del estudio">
+        <svg viewBox="0 0 1200 480" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f1ead9"/>
+              <stop offset="100%" stop-color="#ebe2cc"/>
+            </linearGradient>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0f1e3a" stroke-width="0.5" opacity="0.12"/>
+            </pattern>
+          </defs>
+          <rect width="1200" height="480" fill="url(#mg)"/>
+          <rect width="1200" height="480" fill="url(#grid)"/>
+          <!-- avenues -->
+          <line x1="0" y1="180" x2="1200" y2="180" stroke="#0f1e3a" stroke-width="2" opacity="0.18"/>
+          <line x1="0" y1="320" x2="1200" y2="320" stroke="#0f1e3a" stroke-width="2" opacity="0.18"/>
+          <line x1="420" y1="0" x2="420" y2="480" stroke="#0f1e3a" stroke-width="2" opacity="0.18"/>
+          <line x1="780" y1="0" x2="780" y2="480" stroke="#0f1e3a" stroke-width="2" opacity="0.18"/>
+          <!-- park -->
+          <rect x="500" y="200" width="220" height="100" fill="#0f1e3a" opacity="0.06"/>
+          <text x="610" y="256" text-anchor="middle" fill="#0f1e3a" font-family="Playfair Display, serif" font-size="13" font-style="italic" opacity="0.5">Parque Combate de Abtao</text>
+          <!-- marker -->
+          <g transform="translate(610, 180)">
+            <line x1="0" y1="0" x2="0" y2="-50" stroke="#a67c2b" stroke-width="1.5"/>
+            <circle cx="0" cy="-60" r="14" fill="#a67c2b"/>
+            <circle cx="0" cy="-60" r="6" fill="#fbf9f4"/>
+            <rect x="-90" y="-110" width="180" height="36" fill="#0f1e3a"/>
+            <text x="0" y="-95" text-anchor="middle" fill="#fbf9f4" font-family="Lato, sans-serif" font-size="9" letter-spacing="2">RIBERA &amp; ASOCIADOS</text>
+            <text x="0" y="-82" text-anchor="middle" fill="#a67c2b" font-family="Lato, sans-serif" font-size="8" letter-spacing="1">CAMINO REAL 1234</text>
+          </g>
+          <!-- legend -->
+          <text x="32" y="448" fill="#0f1e3a" font-family="Lato, sans-serif" font-size="10" letter-spacing="2" opacity="0.5">SAN ISIDRO · LIMA 27</text>
+          <text x="1168" y="448" text-anchor="end" fill="#0f1e3a" font-family="Lato, sans-serif" font-size="10" letter-spacing="2" opacity="0.5">-12.0980° -77.0335°</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIOS -->
+  <section class="section">
+    <div class="container">
+      <div class="socios-head">
+        <span class="eyebrow">Equipo directivo</span>
+        <h2>Comuníquese <span class="italic-serif">directamente con un socio</span>.</h2>
+        <p class="lead">
+          Para asuntos específicos, puede dirigirse al socio responsable del área correspondiente.
+          Cada uno responde personalmente su correspondencia profesional.
+        </p>
+      </div>
+      <div class="socios-grid">
+        {socios.map(s => (
+          <div class="socio-card">
+            <div class="socio-avatar" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="80" height="80">
+                <circle cx="40" cy="40" r="38" fill="none" stroke="#0f1e3a" stroke-width="1"/>
+                <text x="40" y="50" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" fill="#a67c2b" font-style="italic">
+                  {s.nombre.split(' ').slice(1, 3).map(p => p[0]).join('')}
+                </text>
+              </svg>
+            </div>
+            <h4 class="socio-nombre">{s.nombre}</h4>
+            <span class="socio-rol">{s.rol}</span>
+            <span class="socio-cap">{s.cap}</span>
+            <a href={`mailto:${s.email}`} class="socio-email">{s.email}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .info-card {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 48px 40px;
+  }
+  .info-card h2 { color: var(--ivory); margin-bottom: 0.4em; }
+  .info-card .divider-rule { background: var(--brass); margin: 0 0 28px; }
+  .info-block { margin-bottom: 28px; }
+  .info-block:last-child { margin-bottom: 0; }
+  .info-block .label { color: var(--brass); margin-bottom: 8px; display: block; }
+  .info-block p {
+    margin: 0;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: rgba(251, 249, 244, 0.85);
+  }
+  .info-block a { color: var(--ivory); border-bottom: 1px dotted rgba(251, 249, 244, 0.3); }
+  .info-block a:hover { color: var(--brass); border-color: var(--brass); }
+  .info-block .muted { color: rgba(251, 249, 244, 0.55); font-style: italic; }
+
+  .form-card {
+    background: #fff;
+    border: 1px solid var(--navy-line);
+    padding: 48px;
+  }
+  .form-card h2 { margin-bottom: 14px; }
+  .form-intro {
+    color: var(--body);
+    font-size: 0.98rem;
+    margin-bottom: 32px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  textarea { resize: vertical; min-height: 120px; }
+  .check { display: flex; gap: 12px; align-items: start; }
+  .check input { width: auto; margin-top: 4px; }
+  .check-label {
+    font-size: 0.84rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--body);
+    font-weight: 400;
+    margin: 0;
+  }
+  .form-foot { font-size: 0.82rem; margin: 12px 0 0; }
+
+  .map-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+  .map-head .lead { margin: 0 auto; }
+  .map-placeholder {
+    aspect-ratio: 1200 / 480;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background: var(--cream);
+  }
+
+  .socios-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .socios-head .lead { margin: 0 auto; }
+  .socios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .socio-card {
+    background: #fff;
+    border: 1px solid var(--navy-line);
+    padding: 36px 28px;
+    text-align: center;
+    transition: all .3s ease;
+  }
+  .socio-card:hover { border-color: var(--brass); box-shadow: var(--shadow-card); }
+  .socio-avatar { display: flex; justify-content: center; margin-bottom: 18px; }
+  .socio-nombre {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+  .socio-rol {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--body);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .socio-cap {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 14px;
+  }
+  .socio-email {
+    display: block;
+    font-size: 0.84rem;
+    color: var(--navy);
+    border-top: 1px solid var(--navy-line);
+    padding-top: 14px;
+    word-break: break-all;
+  }
+  .socio-email:hover { color: var(--brass); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .form-card, .info-card { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .socios-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

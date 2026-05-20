@@ -1,0 +1,299 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Ribera & Asociados — Arquitectos e ingenieros. Treinta años de trayectoria en residencias de alta gama, proyectos comerciales y remodelaciones premium en Lima, Perú.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+
+    <style is:global>
+      :root {
+        --ivory: #fbf9f4;
+        --cream: #f1ead9;
+        --cream-deep: #ebe2cc;
+        --navy: #0f1e3a;
+        --navy-soft: #1a2a4a;
+        --navy-muted: rgba(15, 30, 58, 0.18);
+        --navy-line: rgba(15, 30, 58, 0.12);
+        --body: #2c2e3a;
+        --muted: #6b7280;
+        --brass: #a67c2b;
+        --brass-dark: #8a651f;
+        --warm-gray: #a8a397;
+        --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+        --sans: 'Lato', -apple-system, 'Segoe UI', sans-serif;
+        --shadow-soft: 0 1px 2px rgba(15, 30, 58, 0.04), 0 4px 14px rgba(15, 30, 58, 0.06);
+        --shadow-card: 0 1px 3px rgba(15, 30, 58, 0.05), 0 8px 24px rgba(15, 30, 58, 0.07);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--body);
+        background: var(--ivory);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      main { min-height: 70vh; }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--serif);
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: -0.01em;
+        line-height: 1.18;
+        margin: 0 0 0.6em;
+      }
+
+      h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 500; }
+      h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); }
+      h3 { font-size: 1.35rem; font-weight: 600; }
+      h4 { font-size: 1.1rem; font-weight: 600; }
+
+      p { margin: 0 0 1rem; }
+
+      a { color: var(--navy); text-decoration: none; transition: color .2s ease; }
+      a:hover { color: var(--brass); }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      .container-narrow {
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      .eyebrow {
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-bottom: 1.2rem;
+        display: inline-block;
+      }
+
+      .label {
+        font-family: var(--sans);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .lead {
+        font-size: 1.18rem;
+        line-height: 1.7;
+        color: var(--body);
+        font-weight: 300;
+        max-width: 60ch;
+      }
+
+      .muted { color: var(--muted); }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section-tight { padding: 64px 0; }
+
+      .section-cream {
+        background: var(--cream);
+      }
+
+      .divider-rule {
+        display: block;
+        width: 56px;
+        height: 1px;
+        background: var(--brass);
+        margin: 1.8rem 0;
+      }
+
+      .divider-center {
+        width: 60px;
+        height: 1px;
+        background: var(--brass);
+        margin: 1.6rem auto;
+      }
+
+      .italic-serif {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        font-family: var(--sans);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: var(--navy);
+        color: var(--ivory);
+        border: 1px solid var(--navy);
+        cursor: pointer;
+        transition: all .25s ease;
+      }
+      .btn:hover {
+        background: var(--brass);
+        border-color: var(--brass);
+        color: var(--ivory);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--navy);
+        border: 1px solid var(--navy-muted);
+      }
+      .btn-ghost:hover {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: var(--ivory);
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid var(--navy-line);
+        padding: 36px;
+        transition: all .3s ease;
+      }
+      .card:hover {
+        border-color: var(--brass);
+        box-shadow: var(--shadow-card);
+      }
+
+      .grid { display: grid; gap: 28px; }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+      @media (max-width: 900px) {
+        .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+        .section { padding: 64px 0; }
+      }
+
+      .page-head {
+        padding: 120px 0 64px;
+        border-bottom: 1px solid var(--navy-line);
+      }
+      .page-head h1 { margin-bottom: 0.4em; }
+      .page-head .lead { margin-top: 1.2rem; }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--sans);
+      }
+      th, td {
+        text-align: left;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--navy-line);
+      }
+      th {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--navy);
+        background: var(--cream);
+      }
+      tbody tr:hover { background: rgba(166, 124, 43, 0.04); }
+
+      details {
+        border-bottom: 1px solid var(--navy-line);
+        padding: 20px 0;
+      }
+      details summary {
+        cursor: pointer;
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--navy);
+        list-style: none;
+        position: relative;
+        padding-right: 32px;
+      }
+      details summary::-webkit-details-marker { display: none; }
+      details summary::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: -2px;
+        font-size: 1.6rem;
+        color: var(--brass);
+        font-weight: 300;
+        transition: transform .2s ease;
+      }
+      details[open] summary::after { content: '−'; }
+      details summary:hover { color: var(--brass); }
+      details p { margin-top: 14px; color: var(--body); }
+
+      input, textarea, select {
+        width: 100%;
+        padding: 14px 16px;
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        color: var(--body);
+        background: #fff;
+        border: 1px solid var(--navy-line);
+        outline: none;
+        transition: border-color .2s ease;
+      }
+      input:focus, textarea:focus, select:focus { border-color: var(--brass); }
+      label {
+        display: block;
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+      .field { margin-bottom: 22px; }
+    </style>
+  </body>
+</html>

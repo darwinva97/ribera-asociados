@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proyectos = [
+  {
+    nombre: 'Residencia San Isidro',
+    cat: 'Residencial',
+    ubi: 'Calle Los Eucaliptos, San Isidro',
+    m2: '820 m²',
+    anio: '2022',
+    cliente: 'Familia V.L.',
+    desc: 'Vivienda unifamiliar de tres niveles con jardín interior y sótano técnico. Acabados en mármol travertino y carpintería de roble americano.',
+    grad: 'a'
+  },
+  {
+    nombre: 'Edificio Corporativo Cronos',
+    cat: 'Comercial',
+    ubi: 'Av. El Polo 700, Surco',
+    m2: '4,200 m²',
+    anio: '2023',
+    cliente: 'Inversiones Cronos S.A.C.',
+    desc: 'Edificio de oficinas premium de seis niveles con lobby de doble altura y certificación EDGE. Fachada ventilada en piedra natural.',
+    grad: 'b'
+  },
+  {
+    nombre: 'Casa Club La Molina',
+    cat: 'Hospitalidad',
+    ubi: 'Rinconada del Lago, La Molina',
+    m2: '2,800 m²',
+    anio: '2021',
+    cliente: 'Asociación de Propietarios',
+    desc: 'Equipamiento comunitario integral: piscina, gimnasio, áreas sociales y servicios. Integración paisajística con la quebrada existente.',
+    grad: 'c'
+  },
+  {
+    nombre: 'Remodelación Departamento Miraflores',
+    cat: 'Remodelación',
+    ubi: 'Malecón Cisneros, Miraflores',
+    m2: '340 m²',
+    anio: '2024',
+    cliente: 'Privado',
+    desc: 'Intervención integral en penthouse frente al mar. Redistribución total, terraza ampliada y biblioteca empotrada de doble piso.',
+    grad: 'd'
+  },
+  {
+    nombre: 'Casa de Playa Asia',
+    cat: 'Residencial',
+    ubi: 'Boulevard Asia, Km 97.5',
+    m2: '680 m²',
+    anio: '2020',
+    cliente: 'Privado',
+    desc: 'Casa de descanso en condominio frente al mar. Volumen lineal con muros macizos y grandes vanos al Pacífico. Piscina infinita.',
+    grad: 'a'
+  },
+  {
+    nombre: 'Showroom Boutique Barranco',
+    cat: 'Comercial',
+    ubi: 'Av. Sáenz Peña 320, Barranco',
+    m2: '290 m²',
+    anio: '2023',
+    cliente: 'Casa Linares Joyeros',
+    desc: 'Local comercial de lujo con vitrina restaurada. Conservación de fachada republicana y diseño interior contemporáneo.',
+    grad: 'b'
+  },
+  {
+    nombre: 'Edificio Residencial Aurelius',
+    cat: 'Residencial',
+    ubi: 'Calle Schell 410, Miraflores',
+    m2: '3,600 m²',
+    anio: '2019',
+    cliente: 'Inmobiliaria Aurelius',
+    desc: 'Edificio multifamiliar de ocho niveles con 12 departamentos exclusivos. Lobby tratado como living urbano.',
+    grad: 'c'
+  },
+  {
+    nombre: 'Oficinas Estudio Linares Abogados',
+    cat: 'Comercial',
+    ubi: 'Torre Pardo, San Isidro',
+    m2: '520 m²',
+    anio: '2024',
+    cliente: 'Linares & Asociados Abogados',
+    desc: 'Implementación de estudio jurídico boutique en piso 14. Biblioteca, sala de socios y oficinas privadas. Carpintería en nogal.',
+    grad: 'd'
+  }
+];
+
+function placeholder(grad: string, nombre: string) {
+  const gradients: Record<string, [string, string]> = {
+    a: ['#0f1e3a', '#1a2a4a'],
+    b: ['#f1ead9', '#ebe2cc'],
+    c: ['#0f1e3a', '#a67c2b'],
+    d: ['#a67c2b', '#0f1e3a']
+  };
+  return gradients[grad] || gradients.a;
+}
+---
+
+<Layout title="Proyectos — Ribera & Asociados">
+  <section class="page-head">
+    <div class="container-narrow">
+      <span class="eyebrow">Obra construida · 1995 — 2025</span>
+      <h1>Portafolio <span class="italic-serif">seleccionado</span>.</h1>
+      <p class="lead">
+        Una muestra representativa de proyectos entregados en la última década. Por respeto a la
+        privacidad de nuestros comitentes, algunos datos se presentan de forma reservada.
+        Compartimos el portafolio extendido durante la reunión técnica inicial.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="proj-filters">
+        <span class="label">Filtrar por</span>
+        <span class="filter-chip is-active">Todos</span>
+        <span class="filter-chip">Residencial</span>
+        <span class="filter-chip">Comercial</span>
+        <span class="filter-chip">Remodelación</span>
+        <span class="filter-chip">Hospitalidad</span>
+      </div>
+      <div class="proj-grid">
+        {proyectos.map((p, i) => {
+          const [c1, c2] = placeholder(p.grad, p.nombre);
+          const isLight = p.grad === 'b';
+          return (
+            <article class="proj">
+              <div class="proj-img">
+                <svg viewBox="0 0 400 280" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id={`g${i}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color={c1}/>
+                      <stop offset="100%" stop-color={c2}/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="400" height="280" fill={`url(#g${i})`}/>
+                  <line x1="40" y1="80" x2="120" y2="80" stroke={isLight ? '#0f1e3a' : '#a67c2b'} stroke-width="1"/>
+                  <text x="40" y="120" fill={isLight ? '#0f1e3a' : '#fbf9f4'} font-family="Playfair Display, serif" font-size="22" font-style="italic">
+                    {String(i+1).padStart(2, '0')} · {p.cat}
+                  </text>
+                  <text x="40" y="142" fill={isLight ? '#0f1e3a' : '#a67c2b'} font-family="Lato, sans-serif" font-size="9" letter-spacing="2" opacity="0.85">
+                    {p.anio.toUpperCase()}
+                  </text>
+                  <line x1="40" y1="220" x2="360" y2="220" stroke={isLight ? '#0f1e3a' : '#a67c2b'} stroke-width="0.5" opacity="0.4"/>
+                  <text x="40" y="248" fill={isLight ? '#0f1e3a' : '#fbf9f4'} font-family="Lato, sans-serif" font-size="9" letter-spacing="2" opacity="0.7">
+                    RIBERA &amp; ASOCIADOS · {p.m2}
+                  </text>
+                </svg>
+              </div>
+              <div class="proj-body">
+                <span class="proj-cat">{p.cat} · {p.anio}</span>
+                <h3 class="proj-name">{p.nombre}</h3>
+                <p class="proj-desc">{p.desc}</p>
+                <dl class="proj-meta">
+                  <div>
+                    <dt>Ubicación</dt>
+                    <dd>{p.ubi}</dd>
+                  </div>
+                  <div>
+                    <dt>Área</dt>
+                    <dd>{p.m2}</dd>
+                  </div>
+                  <div>
+                    <dt>Cliente</dt>
+                    <dd>{p.cliente}</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Más información</span>
+      <h2>¿Desea conocer un proyecto en detalle?</h2>
+      <p class="lead" style="margin: 0 auto;">
+        Durante la reunión técnica inicial compartimos memorias, planimetría y registro fotográfico
+        de proyectos comparables al suyo. Las visitas a obra construida se coordinan con autorización
+        previa del propietario.
+      </p>
+      <div class="cta-row">
+        <a href="/contacto" class="btn">Solicitar portafolio extendido</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .proj-filters {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--navy-line);
+    flex-wrap: wrap;
+  }
+  .filter-chip {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 6px 14px;
+    border: 1px solid var(--navy-line);
+    cursor: default;
+  }
+  .filter-chip.is-active { color: var(--ivory); background: var(--navy); border-color: var(--navy); }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px 40px;
+  }
+  .proj {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: transform .3s ease;
+  }
+  .proj:hover { transform: translateY(-4px); }
+  .proj-img {
+    aspect-ratio: 400 / 280;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+  .proj-img svg { display: block; }
+  .proj-body { padding: 0 4px; display: flex; flex-direction: column; gap: 10px; }
+  .proj-cat {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .proj-name {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 0;
+  }
+  .proj-desc { color: var(--body); font-size: 0.98rem; margin: 0 0 6px; }
+  .proj-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    border-top: 1px solid var(--navy-line);
+    padding-top: 18px;
+    margin: 6px 0 0;
+  }
+  .proj-meta div { display: flex; flex-direction: column; gap: 4px; }
+  .proj-meta dt {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .proj-meta dd { margin: 0; font-size: 0.88rem; color: var(--body); }
+
+  .cta-row { display: flex; justify-content: center; margin-top: 32px; }
+  .text-center { text-align: center; }
+
+  @media (max-width: 900px) {
+    .proj-grid { grid-template-columns: 1fr; gap: 48px; }
+    .proj-meta { grid-template-columns: 1fr 1fr; }
+  }
+</style>

@@ -1,0 +1,281 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    n: '01',
+    title: 'Diseño arquitectónico residencial',
+    desc: 'Encargo integral de vivienda unifamiliar de alta gama. Desde el partido conceptual y la lectura del lote, hasta el último detalle de carpintería. Trabajamos con propietarios exigentes que valoran la sobriedad, la luz natural y la durabilidad de los materiales.',
+    deliverables: [
+      'Anteproyecto · 3 esquemas conceptuales',
+      'Proyecto arquitectónico para licencia',
+      'Memorias descriptivas y especificaciones técnicas',
+      'Detalles constructivos a escala 1:20 y 1:5',
+      'Planos de interiores, mobiliario fijo y luminotecnia',
+      'Coordinación con paisajismo'
+    ],
+    team: 'Socio responsable + arquitecto residente + dibujante senior',
+    tiempo: '6 a 10 meses (anteproyecto a expediente técnico)'
+  },
+  {
+    n: '02',
+    title: 'Proyectos comerciales',
+    desc: 'Edificios corporativos, retail premium, oficinas boutique y hospitalidad. Integración con normativa municipal (Lima Metropolitana y distritos), ingeniería estructural en oficina propia, instalaciones MEP y consultoría en certificaciones EDGE y LEED.',
+    deliverables: [
+      'Estudio de viabilidad normativa y zonificación',
+      'Anteproyecto comercial con factibilidad financiera',
+      'Proyecto integral multidisciplinario',
+      'Coordinación con propiedad horizontal (si aplica)',
+      'Gestión de licencia de edificación',
+      'Asistencia técnica durante obra'
+    ],
+    team: 'Dos socios + jefe de proyecto + equipo MEP',
+    tiempo: '10 a 18 meses según escala del proyecto'
+  },
+  {
+    n: '03',
+    title: 'Remodelación premium',
+    desc: 'Intervenciones de alto estándar en residencias y oficinas existentes. Incluye levantamiento de estado actual con tecnología láser, evaluación estructural previa, coordinación con junta de propietarios y gestión municipal completa.',
+    deliverables: [
+      'Levantamiento métrico-fotográfico del estado actual',
+      'Diagnóstico estructural y patológico',
+      'Anteproyecto de intervención',
+      'Expediente para conformidad de obra',
+      'Especificaciones técnicas y BoQ',
+      'Dirección de obra opcional'
+    ],
+    team: 'Arquitecto residente + ingeniero estructural consultor',
+    tiempo: '4 a 8 meses (según alcance de intervención)'
+  },
+  {
+    n: '04',
+    title: 'Dirección técnica de obra',
+    desc: 'Supervisión profesional desde el inicio hasta la entrega. Visitas semanales programadas, control de calidad de materiales y mano de obra, valorizaciones quincenales, libro de obra, gestión de RFI y resolución de incidencias con la contratista.',
+    deliverables: [
+      'Plan de gestión de obra y cronograma valorizado',
+      'Visitas semanales con informe documentado',
+      'Verificación de partidas y valorizaciones',
+      'Libro de obra y bitácora fotográfica',
+      'Acta de recepción y dossier final',
+      'Garantías y postventa por 12 meses'
+    ],
+    team: 'Residente de obra + supervisor MEP + control de calidad',
+    tiempo: 'Duración de la obra (típicamente 8 a 24 meses)'
+  },
+  {
+    n: '05',
+    title: 'Peritajes y tasaciones',
+    desc: 'Servicios técnicos para procesos legales, financieros y de seguros. Peritajes arquitectónicos y estructurales, tasaciones comerciales de inmuebles, evaluación de daños por siniestro y dictámenes para juntas de propietarios.',
+    deliverables: [
+      'Informe pericial técnico-legal',
+      'Tasación comercial con valor de mercado',
+      'Evaluación de daños y memoria fotográfica',
+      'Dictamen técnico para arbitraje o proceso judicial',
+      'Asesoría en mediación entre partes',
+      'Inscripción del informe ante el CAP / CIP'
+    ],
+    team: 'Socio perito inscrito + consultor estructural',
+    tiempo: '2 a 6 semanas según complejidad'
+  },
+  {
+    n: '06',
+    title: 'Asesoría legal-arquitectónica',
+    desc: 'Consultoría especializada en normativa urbanística, propiedad horizontal y gestión municipal. Acompañamos a clientes en procesos de habilitación urbana, independización, regularización de fábrica y licencias atrasadas.',
+    deliverables: [
+      'Estudio normativo y dictamen viabilidad',
+      'Trámite de certificado de parámetros urbanísticos',
+      'Gestión integral de licencia de edificación',
+      'Regularización de fábrica e independización',
+      'Coordinación con notarías y registros públicos',
+      'Acompañamiento en juntas de propietarios'
+    ],
+    team: 'Socio + asesor legal externo (alianza permanente)',
+    tiempo: '4 semanas a 6 meses según trámite'
+  }
+];
+---
+
+<Layout title="Servicios — Ribera & Asociados">
+  <section class="page-head">
+    <div class="container-narrow">
+      <span class="eyebrow">Áreas de práctica</span>
+      <h1>Servicios <span class="italic-serif">integrales</span> de arquitectura e ingeniería.</h1>
+      <p class="lead">
+        Seis líneas de trabajo, un mismo criterio técnico y la misma firma responsable.
+        Cada encargo se asigna a un socio que acompaña el proyecto de principio a fin,
+        respaldado por una planta técnica estable.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-list">
+        {services.map((s, i) => (
+          <article class="service-row" id={`s${s.n}`}>
+            <div class="srv-side">
+              <span class="srv-n">{s.n}</span>
+              <span class="srv-tag">Servicio</span>
+            </div>
+            <div class="srv-body">
+              <h2 class="srv-title">{s.title}</h2>
+              <div class="divider-rule"></div>
+              <p class="srv-desc">{s.desc}</p>
+
+              <div class="srv-grid">
+                <div class="srv-block">
+                  <span class="label">Entregables</span>
+                  <ul class="srv-ul">
+                    {s.deliverables.map(d => <li>{d}</li>)}
+                  </ul>
+                </div>
+                <div class="srv-block">
+                  <div class="kv">
+                    <span class="label">Equipo asignado</span>
+                    <p class="kv-val">{s.team}</p>
+                  </div>
+                  <div class="kv">
+                    <span class="label">Plazo estimado</span>
+                    <p class="kv-val">{s.tiempo}</p>
+                  </div>
+                  <a href="/contacto" class="btn">Consultar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Metodología</span>
+      <h2>Cuatro fases, un solo responsable.</h2>
+      <p class="lead" style="margin: 0 auto;">
+        Independiente del servicio contratado, todo encargo recorre las mismas cuatro fases.
+        El socio responsable nunca cambia.
+      </p>
+      <div class="phases">
+        <div class="phase">
+          <span class="phase-n">i</span>
+          <h4>Diagnóstico</h4>
+          <p>Reunión técnica inicial, lectura del lote / inmueble y revisión normativa.</p>
+        </div>
+        <div class="phase">
+          <span class="phase-n">ii</span>
+          <h4>Propuesta</h4>
+          <p>Anteproyecto, esquemas conceptuales y propuesta económica detallada.</p>
+        </div>
+        <div class="phase">
+          <span class="phase-n">iii</span>
+          <h4>Desarrollo</h4>
+          <p>Expediente técnico, coordinaciones MEP y gestión de licencias.</p>
+        </div>
+        <div class="phase">
+          <span class="phase-n">iv</span>
+          <h4>Ejecución</h4>
+          <p>Dirección de obra, control de calidad y entrega documentada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .services-list { display: flex; flex-direction: column; gap: 80px; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 56px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--navy-line);
+  }
+  .service-row:last-child { border-bottom: 0; }
+  .srv-side { display: flex; flex-direction: column; gap: 8px; position: sticky; top: 100px; align-self: start; }
+  .srv-n {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--brass);
+    line-height: 1;
+    font-style: italic;
+  }
+  .srv-tag {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .srv-title { font-size: 2rem; }
+  .srv-desc { font-size: 1.08rem; max-width: 64ch; }
+  .srv-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--navy-line);
+  }
+  .srv-block { display: flex; flex-direction: column; gap: 16px; }
+  .srv-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .srv-ul li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+  .srv-ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 10px;
+    height: 1px;
+    background: var(--brass);
+  }
+  .kv { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .kv-val { margin: 0; font-size: 1rem; color: var(--body); }
+
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+    text-align: left;
+  }
+  .phase {
+    background: #fff;
+    border: 1px solid var(--navy-line);
+    padding: 32px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .phase-n {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--brass);
+    font-size: 1.4rem;
+  }
+  .phase h4 { margin: 0; font-family: var(--serif); font-weight: 500; }
+  .phase p { font-size: 0.92rem; margin: 0; color: var(--body); }
+
+  .text-center { text-align: center; }
+
+  @media (max-width: 900px) {
+    .service-row { grid-template-columns: 1fr; gap: 24px; padding-bottom: 56px; }
+    .srv-side { position: static; flex-direction: row; align-items: baseline; gap: 18px; }
+    .srv-grid { grid-template-columns: 1fr; gap: 32px; }
+    .phases { grid-template-columns: 1fr 1fr; }
+  }
+</style>

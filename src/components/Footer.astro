@@ -1,0 +1,134 @@
+---
+const year = 2026;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="col">
+        <div class="brand-block">
+          <span class="brand-mark">Ribera <span class="amp">&amp;</span> Asociados</span>
+          <span class="brand-sub">Arquitectos · Ingenieros</span>
+        </div>
+        <p class="muted small">
+          Firma peruana de arquitectura e ingeniería con tres décadas de trayectoria.
+          Diseño, dirección de obra y consultoría técnica de alta exigencia.
+        </p>
+      </div>
+
+      <div class="col">
+        <h5 class="col-title">Servicios</h5>
+        <ul class="col-list">
+          <li><a href="/servicios">Diseño residencial</a></li>
+          <li><a href="/servicios">Proyectos comerciales</a></li>
+          <li><a href="/servicios">Remodelación premium</a></li>
+          <li><a href="/servicios">Dirección de obra</a></li>
+          <li><a href="/servicios">Peritajes y tasaciones</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5 class="col-title">Contacto</h5>
+        <ul class="col-list">
+          <li>Av. Camino Real 1234, Piso 12</li>
+          <li>San Isidro, Lima — Perú</li>
+          <li><a href="tel:+5114421234">(01) 442-1234</a></li>
+          <li><a href="mailto:estudio@riberaasociados.pe">estudio@riberaasociados.pe</a></li>
+          <li>Lun a Vie · 9:00 – 18:30 h</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5 class="col-title">Firma</h5>
+        <ul class="col-list">
+          <li><a href="/proyectos">Portafolio</a></li>
+          <li><a href="/financiamiento">Pago a crédito</a></li>
+          <li><a href="/contacto">Solicitar cotización</a></li>
+          <li class="muted small">CAP 12345 · CIP 09876</li>
+          <li class="muted small">RUC 20512345678</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="copyright">© {year} Ribera &amp; Asociados · Arquitectos · CAP 12345 · Lima, Perú</span>
+      <span class="legal">
+        <a href="/contacto">Aviso legal</a>
+        <span class="sep">·</span>
+        <a href="/contacto">Política de privacidad</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--cream);
+    color: var(--body);
+    padding: 80px 0 32px;
+    border-top: 1px solid var(--navy-line);
+    margin-top: 80px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+    gap: 56px;
+    margin-bottom: 64px;
+  }
+  .col { display: flex; flex-direction: column; gap: 14px; }
+  .brand-block { display: flex; flex-direction: column; gap: 4px; }
+  .brand-mark {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .amp { color: var(--brass); font-style: italic; }
+  .brand-sub {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .small { font-size: 0.88rem; line-height: 1.6; }
+  .col-title {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .col-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.92rem;
+  }
+  .col-list a { color: var(--body); }
+  .col-list a:hover { color: var(--brass); }
+  .footer-bottom {
+    border-top: 1px solid var(--navy-line);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .legal a { color: var(--muted); }
+  .legal a:hover { color: var(--brass); }
+  .sep { margin: 0 8px; opacity: 0.5; }
+
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
